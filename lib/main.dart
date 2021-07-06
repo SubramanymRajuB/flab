@@ -24,6 +24,7 @@ class Welcome extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Flutter Demo\'s'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

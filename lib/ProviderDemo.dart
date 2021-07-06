@@ -25,7 +25,9 @@ class ProviderDemo extends StatelessWidget {
       home: ChangeNotifierProvider(
         create: (_) => TodoModel(),
         child: MyHomePage(),
-      )
+      ),
+
+      debugShowCheckedModeBanner: false,
 
     );
   }
@@ -40,7 +42,12 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: Text("Todo Application", style: TextStyle(color: Colors.white),),
-        leading: IconButton(icon: Icon(Icons.menu, color: Colors.white70,),),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white70,),
+          onPressed: (){
+            Navigator.of(context, rootNavigator: true).pop(context);
+          },
+          ),
       ),
       body: Column(
         children: <Widget>[
