@@ -1,3 +1,4 @@
+import 'package:flab/providerDemo.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -60,7 +61,13 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               Expanded(
                 child: ElevatedButton(
-                  child: Text('Rest API'),
+                  child: Text('Provider Demo'),
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ProviderDemo()),
+                    );
+                  },
                 ),
               )
             ],
