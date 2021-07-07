@@ -1,6 +1,7 @@
-import 'package:flab/TodoModel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import 'todo_model.dart';
 
 void main() => runApp(ProviderDemo());
 

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import 'TaskModel.dart';
+import 'task_model.dart';
 
 class TodoModel extends ChangeNotifier{
   List<TaskModel> taskList = []; //contians all the task

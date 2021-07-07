@@ -1,5 +1,6 @@
-import 'package:flab/providerDemo.dart';
 import 'package:flutter/material.dart';
+
+import 'state_mngmnt/provider/provider_demo.dart';
 
 void main() {
   runApp(Welcome());
