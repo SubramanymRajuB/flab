@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'state_mngmnt/bloc/bloc_demo.dart';
 import 'state_mngmnt/provider/provider_demo.dart';
 
 void main() {
@@ -59,18 +60,33 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Center(
-          child: Row(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              Expanded(
-                child: ElevatedButton(
-                  child: Text('Provider Demo'),
-                  onPressed: (){
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => ProviderDemo()),
-                    );
-                  },
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(double.infinity, 50),
                 ),
+                child: Text('Provider Demo'),
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ProviderDemo()),
+                  );
+                },
+              ),
+              SizedBox(height: 10),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(double.infinity, 50),
+                ),
+                child: Text('Bloc Demo'),
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => BlocDemo()),
+                  );
+                },
               )
             ],
           ),
