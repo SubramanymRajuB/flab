@@ -14,7 +14,7 @@ class ProviderDemo extends StatelessWidget {
       ),
       home: ChangeNotifierProvider(
         create: (_) => TodoModel(),
-        child: MyHomePage(),
+        child: ProviderDemoPage(),
       ),
 
       debugShowCheckedModeBanner: false,
@@ -23,7 +23,7 @@ class ProviderDemo extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class ProviderDemoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

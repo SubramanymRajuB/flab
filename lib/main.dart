@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'state_mngmnt/bloc/bloc_demo.dart';
+import 'state_mngmnt/mobx/mobx_demo.dart';
 import 'state_mngmnt/provider/provider_demo.dart';
 
 void main() {
@@ -85,6 +86,19 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => BlocDemo()),
+                  );
+                },
+              ),
+              SizedBox(height: 10),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(double.infinity, 50),
+                ),
+                child: Text('MobX Demo'),
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MobXDemo()),
                   );
                 },
               )
