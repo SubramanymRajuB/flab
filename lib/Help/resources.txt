@@ -1,3 +1,4 @@
 ProviderDemo: https://www.youtube.com/watch?v=Md_zBZgVyJo, https://github.com/themaaz32/provider_todo
 BlocDemo: https://www.youtube.com/watch?v=yfn1w2Z-Ooo, https://github.com/themaaz32/WeatherAppWithBloc, https://www.youtube.com/watch?v=2zZkVLsySm4
 MobxDemo: https://mobx.netlify.app/getting-started/, https://www.youtube.com/watch?v=CT6dXcfpk0E&t=51s, https://github.com/themaaz32/mobx_implementation
+GetXDemo: https://www.youtube.com/watch?v=apPH1CCOtKQ, https://github.com/afzalali15/shopx, https://www.youtube.com/watch?v=tNGfVp4KY2g, https://www.youtube.com/watch?v=V0oxG3tWiwk

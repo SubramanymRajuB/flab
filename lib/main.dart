@@ -1,3 +1,4 @@
+import 'package:flab/state_mngmnt/getx/views/product_list.dart';
 import 'package:flutter/material.dart';
 
 import 'state_mngmnt/bloc/bloc_demo.dart';
@@ -99,6 +100,19 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => MobXDemo()),
+                  );
+                },
+              ),
+              SizedBox(height: 10),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(double.infinity, 50),
+                ),
+                child: Text('GetX Demo'),
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => GetXDemo()),
                   );
                 },
               )

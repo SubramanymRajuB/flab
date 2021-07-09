@@ -32,8 +32,10 @@ dependencies:
   flutter_bloc: ^7.0.1
   mobx: ^2.0.1
   flutter_mobx: ^2.0.0
-  http: ^0.12.0+2
+  get: ^4.1.4
+  http: ^0.13.3
   equatable: ^0.6.1
+  flutter_staggered_grid_view: ^0.4.0
 
 dev_dependencies:
   flutter_test:
