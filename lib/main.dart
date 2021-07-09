@@ -1,9 +1,14 @@
 import 'package:flab/state_mngmnt/getx/views/product_list.dart';
 import 'package:flutter/material.dart';
+import 'package:redux/redux.dart';
 
+import 'custom_views/settings.dart';
 import 'state_mngmnt/bloc/bloc_demo.dart';
 import 'state_mngmnt/mobx/mobx_demo.dart';
 import 'state_mngmnt/provider/provider_demo.dart';
+import 'state_mngmnt/redux/model/app_state.dart';
+import 'state_mngmnt/redux/redux/reducers.dart';
+import 'state_mngmnt/redux/redux_demo.dart';
 
 void main() {
   runApp(Welcome());
@@ -29,6 +34,7 @@ class Welcome extends StatelessWidget {
       ),
       home: MyHomePage(title: 'Flutter Demo\'s'),
       debugShowCheckedModeBanner: false,
+      
     );
   }
 }
@@ -113,6 +119,21 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => GetXDemo()),
+                  );
+                },
+              ),
+              SizedBox(height: 10),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(double.infinity, 50),
+                ),
+                child: Text('ReduX Demo'),
+                onPressed: (){
+                  Store<AppState> reduxStore =
+                  Store<AppState>(reducer, initialState: AppState(sliderFontSize: 0.5));
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ReduxDemo(reduxStore)),
                   );
                 },
               )
