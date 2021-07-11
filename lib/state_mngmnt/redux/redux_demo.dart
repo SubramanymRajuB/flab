@@ -1,12 +1,11 @@
-import 'package:flab/custom_views/drawer_menu.dart';
-import 'package:flab/custom_views/settings.dart';
+import 'package:flab/views/drawer_menu.dart';
+import 'package:flab/views/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 
 import 'model/app_state.dart';
-import 'redux/reducers.dart';
 
 const kAppTitle = 'State by Redux';
 Store<AppState> _store;
