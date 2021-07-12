@@ -1,4 +1,6 @@
 Widgets & Latouts Demo: https://github.com/TakeoffAndroid/flutter-examples#dropdownbutton, https://github.com/FlutterOpen/flutter-layouts-exampls, https://github.com/bizz84/layout-demo-flutter, https://github.com/maheshmnj/Awesome-Flutter-Layouts
+Forms Validation Demo: https://www.youtube.com/watch?v=coIZkPDt4ZQ&list=PLyLkn_nipSjN76fqfxzi3moj3hhqOzJo0&index=7
+Navigation Demo: https://flutter.dev/docs/cookbook/navigation
 ProviderDemo: https://www.youtube.com/watch?v=Md_zBZgVyJo, https://github.com/themaaz32/provider_todo
 BlocDemo: https://www.youtube.com/watch?v=yfn1w2Z-Ooo, https://github.com/themaaz32/WeatherAppWithBloc, https://www.youtube.com/watch?v=2zZkVLsySm4
 MobxDemo: https://mobx.netlify.app/getting-started/, https://www.youtube.com/watch?v=CT6dXcfpk0E&t=51s, https://github.com/themaaz32/mobx_implementation
