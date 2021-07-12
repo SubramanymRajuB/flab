@@ -6,12 +6,9 @@ class SecondRoute extends StatelessWidget {
 
   // Declare a field that holds the Todo.
   Todo todo;
-  // Use the Todo to create the UI.
-    // Extract the arguments from the current ModalRoute
-    // settings and cast them as ScreenArguments.
+  bool isHero;
 
-  // In the constructor, require a Todo.
-  SecondRoute({Key key,  this.todo}) : super(key: key);
+  SecondRoute({Key key,  this.todo, this.isHero=false}) : super(key: key);
   
   @override
   Widget build(BuildContext context) {
@@ -20,6 +17,23 @@ class SecondRoute extends StatelessWidget {
     todo = ModalRoute.of(context).settings.arguments as Todo;
   }
   if(todo == null){
+    if(isHero){
+      return Scaffold(
+      body: GestureDetector(
+        onTap: () {
+          Navigator.pop(context);
+        },
+        child: Center(
+          child: Hero(
+            tag: 'imageHero',
+            child: Image.network(
+              'https://picsum.photos/250?image=9',
+            ),
+          ),
+        ),
+      ),
+    );
+    }
     return Scaffold(
       appBar: AppBar(
         title: Text("Second Route"),

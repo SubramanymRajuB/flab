@@ -40,9 +40,34 @@ class FirstRoute extends StatelessWidget {
           },
           )
       ),
+      
+      //Different Navigation methods, names route pasing data 
       body: Center(
         child: Column(
           children: [
+            Text(
+              "Hero Animation",
+              style: TextStyle(
+                fontSize: 20
+              ),
+            ),
+            //Animate a widget across screens
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (_) {
+                  return SecondRoute(isHero: true,);
+                }));
+              },
+              child: Hero(
+                tag: 'imageHero',
+                child: Image.network(
+                  'https://picsum.photos/250?image=9',
+                  loadingBuilder: (context, child, progress){
+                    return progress==null?child:LinearProgressIndicator();
+                  },
+                ),
+              ),
+            ),
             ElevatedButton(
               child: Text('Navigation Methods to Second Screen'),
               onPressed: () async {
