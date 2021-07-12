@@ -4,6 +4,6 @@ import 'package:flab/startup/welcome.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(Demo());
-  //runApp(Welcome());
+  // runApp(Demo());
+  runApp(Welcome());
 }

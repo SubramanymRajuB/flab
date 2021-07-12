@@ -148,8 +148,26 @@ class _DemoPage extends StatelessWidget {
     
               Icon(
                 Icons.flight_takeoff,
-                color: Colors.lightGreen,
+                color: Colors.blue,
                 size: 18.0,
+              ),
+
+              Image.asset(
+                'assets/pic_03.png',
+                width: 60,
+                height: 70,
+                fit: BoxFit.fill,
+                color: Colors.blueAccent,
+                colorBlendMode: BlendMode.darken,
+              ),
+
+              Image.network(
+                'http://example.com/dash.png',
+                width: 60,
+                height: 70,
+                loadingBuilder: (context, child, progress){
+                  return progress==null?child:LinearProgressIndicator();
+                },
               )
     
     
