@@ -15,6 +15,7 @@ class DefaultListView extends StatelessWidget {
           )
         ),
         body:ListView(
+          scrollDirection: Axis.vertical,
           padding: const EdgeInsets.all(8),
           children: <Widget>[
             Container(
