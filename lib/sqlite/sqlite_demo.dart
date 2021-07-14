@@ -25,6 +25,7 @@ class _SQLiteDemoState extends State<SQLiteDemo> {
         future: DBProvider.db.getAllClients(),
         builder: (BuildContext context, AsyncSnapshot<List<Client>> snapshot) {
           if (snapshot.hasData) {
+            if(snapshot.data.length>0){
             return ListView.builder(
               itemCount: snapshot.data.length,
               itemBuilder: (BuildContext context, int index) {
@@ -37,6 +38,7 @@ class _SQLiteDemoState extends State<SQLiteDemo> {
                   background: Container(color: Colors.red),
                   onDismissed: (direction) {
                     DBProvider.db.deleteClient(item.id);
+                    //setState(() {});
                   },
                   child: ListTile(
                     title: Text(item.lastName),
@@ -52,6 +54,9 @@ class _SQLiteDemoState extends State<SQLiteDemo> {
                 );
               },
             );
+            }else{
+              return Center(child: Text("No Data"));
+            }
           } else {
             return Center(child: CircularProgressIndicator());
           }
