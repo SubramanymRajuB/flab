@@ -2,9 +2,9 @@ import 'package:flab/drawer/routes/Routes.dart';
 import 'package:flutter/material.dart';
 
 import 'injection/dependency_injection.dart';
-import 'models/contacts/contact_list_view.dart';
-import 'models/events/event_list_view.dart';
-import 'models/notes/note_list_view.dart';
+import 'modules/contacts/contact_list_view.dart';
+import 'modules/events/event_list_view.dart';
+import 'modules/notes/note_list_view.dart';
 
 class DrawerDemo extends StatelessWidget {
 
