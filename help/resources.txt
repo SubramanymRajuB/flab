@@ -5,6 +5,7 @@ Drawer Demo:https://medium.com/flutter-community/flutter-vi-navigation-drawer-fl
 Tabbar Demo: https://flutter.dev/docs/cookbook/design/tabs
 BottomNavigationBar Demo: https://api.flutter.dev/flutter/material/BottomNavigationBar-class.html
 Forms Validation Demo: https://www.youtube.com/watch?v=coIZkPDt4ZQ&list=PLyLkn_nipSjN76fqfxzi3moj3hhqOzJo0&index=7
+Themes Demo: https://mobikul.com/working-with-themes-in-flutter/, https://www.youtube.com/watch?v=9iQiVUmLXyI, https://api.flutter.dev/flutter/material/ThemeData-class.html, https://aditluhadia.medium.com/change-flutter-app-theme-based-on-device-settings-139d0c32b4a8
 Navigation Demo: https://flutter.dev/docs/cookbook/navigation
 ProviderDemo: https://www.youtube.com/watch?v=Md_zBZgVyJo, https://github.com/themaaz32/provider_todo
 BlocDemo: https://www.youtube.com/watch?v=yfn1w2Z-Ooo, https://github.com/themaaz32/WeatherAppWithBloc, https://www.youtube.com/watch?v=2zZkVLsySm4

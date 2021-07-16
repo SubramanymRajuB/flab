@@ -13,7 +13,12 @@ class ContactsPage extends StatelessWidget {
       drawer: AppDrawer(),
         appBar: AppBar(
           title: Text("Contacts"),
-        ),
+          actions : [IconButton(
+          icon: Icon(Icons.cancel, color: Colors.white70,),
+          onPressed: (){
+            Navigator.of(context, rootNavigator: true).pop(context);
+          }
+        )]),
         body: ContactList(),
         // persistentFooterButtons: [
         //   ListTile(

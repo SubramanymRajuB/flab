@@ -31,7 +31,7 @@ class ProviderDemoPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Text("Provider Demo", style: TextStyle(color: Colors.white),),
+        title: Text("Provider Demo", style: TextStyle(color: Colors.white)),
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white70,),
           onPressed: (){
