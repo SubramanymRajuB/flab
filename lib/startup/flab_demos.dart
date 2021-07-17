@@ -2,7 +2,7 @@ import 'package:flab/drawer/drawer_demo.dart';
 import 'package:flab/grid_view/gridview_demo.dart';
 import 'package:flab/layouts/layouts_demo.dart';
 import 'package:flab/lifecycle/lifecycle_manager.dart';
-import 'package:flab/lifecycle/pages/home_page.dart';
+import 'package:flab/lifecycle/pages/first_page.dart';
 import 'package:flab/listview/listview_demo.dart';
 import 'package:flab/native/simple_msg.dart';
 import 'package:flab/navigation/first_nav.dart';
