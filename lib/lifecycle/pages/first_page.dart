@@ -52,18 +52,18 @@ class _FirstPageState extends State<FirstPage> {
     super.didChangeDependencies();
   }
   
-  @override
-  Widget build(BuildContext context) {
-    
-    print("4: build");
-    
-    int count=0;
+    int count = 0;
     void _increment(){
       setState(() {
            print("6: setState");
            count++;
           });
     }
+  
+  @override
+  Widget build(BuildContext context) {
+    
+    print("4: build");
 
     return Scaffold(
       appBar: AppBar(

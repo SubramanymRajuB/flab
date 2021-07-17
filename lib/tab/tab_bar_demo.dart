@@ -3,6 +3,7 @@ class TabBarDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: DefaultTabController(
         length: 3,
         child: Scaffold(
@@ -28,3 +29,4 @@ class TabBarDemo extends StatelessWidget {
     );
   }
 }
+
