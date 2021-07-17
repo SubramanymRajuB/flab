@@ -16,7 +16,6 @@ import 'package:flab/state_mngmnt/provider/provider_demo.dart';
 import 'package:flab/state_mngmnt/redux/model/app_state.dart';
 import 'package:flab/state_mngmnt/redux/redux/reducers.dart';
 import 'package:flab/state_mngmnt/redux/redux_demo.dart';
-import 'package:flab/tab/bottom_nav_bar.dart';
 import 'package:flab/tab/tab_bar_demo.dart';
 import 'package:flab/theme/theme_demo.dart';
 import 'package:flab/validation/login_validation.dart';
@@ -140,8 +139,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   onPressed: (){
                     Navigator.push(
                       context,
-                      //MaterialPageRoute(builder: (context) => TabBarDemo()),
-                      MaterialPageRoute(builder: (context) => BottomNav()),
+                      MaterialPageRoute(builder: (context) => TabBarDemo()),
                     );
                   },
                 ),
