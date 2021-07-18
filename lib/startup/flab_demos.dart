@@ -11,6 +11,7 @@ import 'package:flab/sqlite/sqlite_demo.dart';
 import 'package:flab/sqlite/sqlite_demo_stream.dart';
 import 'package:flab/state_mngmnt/bloc/bloc_demo.dart';
 import 'package:flab/state_mngmnt/getx/views/product_list.dart';
+import 'package:flab/state_mngmnt/inherited/inherited_widget_demo.dart';
 import 'package:flab/state_mngmnt/mobx/mobx_demo.dart';
 import 'package:flab/state_mngmnt/provider/provider_demo.dart';
 import 'package:flab/state_mngmnt/redux/model/app_state.dart';
@@ -179,6 +180,19 @@ class _WelcomePageState extends State<WelcomePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => NavigarionDemo()),
+                    );
+                  },
+                ),
+                SizedBox(height: 10),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: Size(double.infinity, 50),
+                  ),
+                  child: Text('Inherited Widget Demo'),
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => InheritedWidgetDemo()),
                     );
                   },
                 ),
