@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'todo_model.dart';
+import 'change_notifier_todo.dart';
 
 class ProviderDemo extends StatelessWidget {
   // This widget is the root of your application.
@@ -13,7 +13,7 @@ class ProviderDemo extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: ChangeNotifierProvider(
-        create: (_) => TodoModel(),
+        create: (_) => ChangeNotifierTodo(),
         child: ProviderDemoPage(),
       ),
 
@@ -57,19 +57,18 @@ class ProviderDemoPage extends StatelessWidget {
 
           Expanded(
             child: Container(
-
               decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(50), topLeft: Radius.circular(60)), color: Colors.white),
-              child: Consumer<TodoModel>(
-                builder: (context, todo, child){
+              child: Consumer<ChangeNotifierTodo>(
+                builder: (context, changeNotifierTodo, child){
                   return ListView.builder(
-                      itemCount: todo.taskList.length,
+                      itemCount: changeNotifierTodo.taskList.length,
                       itemBuilder: (context, index){
                         return Container(
                           child: ListTile(
                             contentPadding: EdgeInsets.only(left: 32, right: 32, top: 8, bottom: 8),
-                            title: Text(todo.taskList[index].title, style : TextStyle(color: Colors.black87,
+                            title: Text(changeNotifierTodo.taskList[index].title, style : TextStyle(color: Colors.black87,
                                 fontWeight: FontWeight.bold),),
-                            subtitle: Text(todo.taskList[index].detail, style: TextStyle(color: Colors.black45,
+                            subtitle: Text(changeNotifierTodo.taskList[index].detail, style: TextStyle(color: Colors.black45,
                                 fontWeight: FontWeight.bold),),
 
                             trailing: Icon(Icons.check_circle, color: Colors.greenAccent,),
@@ -91,7 +90,7 @@ class ProviderDemoPage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: (){
-            Provider.of<TodoModel>(context, listen: false).addTaskInList();
+            Provider.of<ChangeNotifierTodo>(context, listen: false).addTaskInList();
         },
       ),
 
