@@ -10,6 +10,7 @@ import 'package:flab/rest_api/rest_api_demo.dart';
 import 'package:flab/sqlite/sqlite_demo.dart';
 import 'package:flab/sqlite/sqlite_demo_stream.dart';
 import 'package:flab/state_mngmnt/bloc/bloc_demo.dart';
+import 'package:flab/state_mngmnt/bloc/simple/simple_bloc_demo.dart';
 import 'package:flab/state_mngmnt/getx/views/product_list.dart';
 import 'package:flab/state_mngmnt/inherited/inherited_widget_simple.dart';
 import 'package:flab/state_mngmnt/inherited/pages/Inherite_demo.dart';
@@ -219,7 +220,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   onPressed: (){
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => BlocDemo()),
+                      MaterialPageRoute(builder: (context) => SimpleBLocDemo()),
                     );
                   },
                 ),
