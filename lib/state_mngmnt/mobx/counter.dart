@@ -1,5 +1,5 @@
 import 'package:mobx/mobx.dart';
-part 'counter.g.dart';
+part 'counter.g.dart'; //flutter packages pub run build_runner build, flutter packages pub run build_runner watch
 
 class CounterStore  = Counter with _$CounterStore;
 

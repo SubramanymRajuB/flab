@@ -39,6 +39,12 @@ class ReduxDemoPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(kAppTitle),
         backgroundColor: Colors.teal,
+          actions : [IconButton(
+          icon: Icon(Icons.cancel, color: Colors.white70,),
+          onPressed: (){
+            Navigator.of(context, rootNavigator: true).pop(context);
+          }
+        )]
       ),
       drawer: DrawerMenu(),
       body: Container(
