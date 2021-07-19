@@ -29,7 +29,7 @@ class MobXPage extends StatefulWidget {
 }
 
 class _MobXPageState extends State<MobXPage> {
-
+  //ClassWihtoutStore _counterWihtoutStore = new ClassWihtoutStore();
   CounterStore _counter = CounterStore();
 
   @override
@@ -54,6 +54,7 @@ class _MobXPageState extends State<MobXPage> {
             Observer(
               builder: (context){
                 return Text(
+                  //'${_counterWihtoutStore.counter.value}',
                   '${_counter.counter}',
                   style: Theme.of(context).textTheme.headline1,
                 );
@@ -64,7 +65,7 @@ class _MobXPageState extends State<MobXPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-          //todo code
+          //_counterWihtoutStore.increment.call();
           _counter.increment();
         },
         tooltip: 'Increment',
