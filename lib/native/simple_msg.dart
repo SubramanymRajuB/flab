@@ -11,6 +11,7 @@ class SimplePlatformMsg extends StatefulWidget {
 }
 class _SimplePlatformMsgState extends State<SimplePlatformMsg> {
   static const msgChannel = const MethodChannel('flutter.native/simple_msg');
+  static const launchChannel = const MethodChannel('flutter.native/launchURL');
   static const batteryChannel = const MethodChannel('flutter.native/battery');
 
   String _responseFromNativeCode = 'Waiting for Response...';
@@ -25,6 +26,14 @@ class _SimplePlatformMsgState extends State<SimplePlatformMsg> {
     setState(() {
       _responseFromNativeCode = response;
     });
+  }
+
+  Future<void> _launchURL() async {
+    try {
+       await launchChannel.invokeMethod('launchBrowser');
+    } on PlatformException catch (e) {
+      var response = "Failed to Invoke: '${e.message}'.";
+    }
   }
 
   // Get battery level.
@@ -68,6 +77,11 @@ class _SimplePlatformMsgState extends State<SimplePlatformMsg> {
                 onPressed: _getNativeMsg,
               ),
               Text(_responseFromNativeCode),
+              SizedBox(height: 10),
+              ElevatedButton(
+                child: Text('Launch URL'),
+                onPressed: _launchURL,
+              ),
               SizedBox(height: 10),
               ElevatedButton(
                 child: Text('Get Battery Status'),

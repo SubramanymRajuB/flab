@@ -3,6 +3,7 @@ package com.example.flab;
 import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.net.Uri;
 import android.os.BatteryManager;
 import android.os.Build;
 
@@ -14,6 +15,7 @@ import io.flutter.plugin.common.MethodChannel;
 
 public class MainActivity extends FlutterActivity {
     private static final String MSG_CHANNEL = "flutter.native/simple_msg";
+    private static final String LAUNCH_CHANNEL = "flutter.native/launchURL";
     private static final String BATTERY_CHANNEL = "flutter.native/battery";
     @Override
     public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine) {
@@ -24,6 +26,18 @@ public class MainActivity extends FlutterActivity {
                         ((call, result) -> {
                             if(call.method.equals("simpleMsgFromNative")){
                                 result.success(helloFromNativeCode());
+                            }
+                            else {
+                                result.notImplemented();
+                            }
+                        })
+                );
+
+        new MethodChannel(flutterEngine.getDartExecutor().getBinaryMessenger(),LAUNCH_CHANNEL)
+                .setMethodCallHandler(
+                        ((call, result) -> {
+                            if(call.method.equals("launchBrowser")){
+                                openWebBrowser("https://flutter.io");
                             }
                             else {
                                 result.notImplemented();
@@ -67,4 +81,13 @@ public class MainActivity extends FlutterActivity {
 
         return batteryLevel;
     }
+
+    private void openWebBrowser(String url){
+        Uri webpage = Uri.parse(url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+        if(intent.resolveActivity(getPackageManager())!=null){
+            startActivity(intent);
+        }
+    }
+
 }

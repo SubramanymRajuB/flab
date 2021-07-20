@@ -22,6 +22,18 @@ import Flutter
       self?.simpleMsgFromNative(result: result)
     })
 
+    let launchChannel = FlutterMethodChannel(name: "flutter.native/launchURL",
+                                              binaryMessenger: controller.binaryMessenger)
+    launchChannel.setMethodCallHandler({
+      [weak self] (call: FlutterMethodCall, result: FlutterResult) -> Void in
+      // Note: this method is invoked on the UI thread.
+      guard call.method == "launchBrowser" else {
+        result(FlutterMethodNotImplemented)
+        return
+      }
+      self?.openWebBrowser(url: "https://flutter.io")
+    })
+
     let batteryChannel = FlutterMethodChannel(name: "flutter.native/battery",
                                               binaryMessenger: controller.binaryMessenger)
     batteryChannel.setMethodCallHandler({
@@ -40,6 +52,13 @@ import Flutter
 
   private func simpleMsgFromNative(result: FlutterResult) {
       result("Hello From Native IOS Code");
+  }
+
+  private func openWebBrowser(url: String) {
+    if let url = URL(string: url) //safely unwrap it
+    {
+      UIApplication.shared.openURL(url)
+    }
   }
 
   private func receiveBatteryLevel(result: FlutterResult) {
