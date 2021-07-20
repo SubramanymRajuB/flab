@@ -1,3 +1,4 @@
+import 'package:flab/devtools/devtools_demo.dart';
 import 'package:flab/drawer/drawer_demo.dart';
 import 'package:flab/grid_view/gridview_demo.dart';
 import 'package:flab/layouts/layouts_demo.dart';
@@ -303,6 +304,19 @@ class _WelcomePageState extends State<WelcomePage> {
                       context,
                       MaterialPageRoute(builder: (context) => SQLiteDemo()),
                       // MaterialPageRoute(builder: (context) => SQLiteStreamDemo()),
+                    );
+                  },
+                ),
+                SizedBox(height: 10),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: Size(double.infinity, 50),
+                  ),
+                  child: Text('Dart Dev Tools Demo'),
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => DevToolsDemo())
                     );
                   },
                 )
