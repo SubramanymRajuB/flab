@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'custom_scrollview.dart';
 import 'default_listview.dart';
 import 'empty_list.dart';
+import 'expandable.dart';
 import 'list_builder.dart';
 import 'list_seperator.dart';
 import 'scroll_physics.dart';
@@ -104,6 +105,19 @@ class ListViewDemo extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => ListScrollPhysics()),
+                    );
+                  },
+                ),
+                SizedBox(height: 10),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: Size(double.infinity, 50),
+                  ),
+                  child: Text('Expandable List'),
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ExpandableListDemo()),
                     );
                   },
                 )

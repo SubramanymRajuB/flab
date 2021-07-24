@@ -7,5 +7,6 @@ import 'startup/default_counter.dart';
 
 void main() {
   // runApp(Demo());
-  runApp(DefaultCounter());
+  //runApp(DefaultCounter());
+  runApp(Welcome());
 }
