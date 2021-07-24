@@ -9,6 +9,8 @@
             "request": "launch",
             "type": "dart",
             "console": "terminal",
+            //"flutterMode": "debug"
+            //"flutterMode": "profile" // or flutter run --profile
         }
     ]
 }
