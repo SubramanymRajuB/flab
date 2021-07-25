@@ -1,3 +1,4 @@
+import 'package:flab/animation/animation_demo.dart';
 import 'package:flab/devtools/devtools_demo.dart';
 import 'package:flab/drawer/drawer_demo.dart';
 import 'package:flab/grid_view/gridview_demo.dart';
@@ -92,6 +93,19 @@ class _WelcomePageState extends State<WelcomePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => LayoutDemo()),
+                    );
+                  },
+                ),
+                SizedBox(height: 10),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: Size(double.infinity, 50),
+                  ),
+                  child: Text('Animation Demo'),
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AnimationDemo()),
                     );
                   },
                 ),
