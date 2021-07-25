@@ -6,6 +6,7 @@ import 'package:flab/layouts/layouts_demo.dart';
 import 'package:flab/lifecycle/lifecycle_manager.dart';
 import 'package:flab/lifecycle/pages/first_page.dart';
 import 'package:flab/listview/listview_demo.dart';
+import 'package:flab/localization/localization_demo.dart';
 import 'package:flab/native/simple_msg.dart';
 import 'package:flab/navigation/first_nav.dart';
 import 'package:flab/rest_api/rest_api_demo.dart';
@@ -290,6 +291,19 @@ class _WelcomePageState extends State<WelcomePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => SimplePlatformMsg()),
+                    );
+                  },
+                ),
+                SizedBox(height: 10),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: Size(double.infinity, 50),
+                  ),
+                  child: Text('Localization Demo'),
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => LocalizationDemo()),
                     );
                   },
                 ),
