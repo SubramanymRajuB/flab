@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../bloc_demo.dart';
 import 'counter_bloc.dart';
 
 class SimpleBLocDemo extends StatelessWidget {
@@ -10,6 +11,16 @@ class SimpleBLocDemo extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Simple Bloc Demo"),
+        actions: [
+          IconButton(
+          icon: Icon(Icons.more_horiz),
+          onPressed: (){
+            Navigator.push(
+              context, 
+              MaterialPageRoute(builder: (context)=>BlocDemo())
+            );
+          },
+        )],
         ),
         body: BlocProvider(
           create: (BuildContext context) => CounterBloc(0),
