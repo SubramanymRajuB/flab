@@ -20,7 +20,7 @@ class LocalizationDemo extends StatelessWidget {
       // ],
       // supportedLocales: [
       //   Locale('en', ''), // English, no country code
-      //   Locale('es', ''), // Spanish, no country code
+      //   Locale('ar', ''), // Spanish, no country code
       // ],
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
