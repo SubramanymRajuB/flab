@@ -14,6 +14,7 @@ import 'package:flab/sqlite/sqlite_demo.dart';
 import 'package:flab/sqlite/sqlite_demo_stream.dart';
 import 'package:flab/state_mngmnt/bloc/bloc_demo.dart';
 import 'package:flab/state_mngmnt/bloc/simple/simple_bloc_demo.dart';
+import 'package:flab/state_mngmnt/getx/controllers/inject_controllers.dart';
 import 'package:flab/state_mngmnt/getx/views/product_list.dart';
 import 'package:flab/state_mngmnt/inherited/inherited_widget_simple.dart';
 import 'package:flab/state_mngmnt/inherited/pages/Inherite_demo.dart';
@@ -26,6 +27,7 @@ import 'package:flab/tab/tab_bar_demo.dart';
 import 'package:flab/theme/theme_demo.dart';
 import 'package:flab/validation/login_validation.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:redux/redux.dart';
 
 class Welcome extends StatelessWidget {
@@ -41,6 +43,18 @@ class Welcome extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       
     );
+
+    // return GetMaterialApp(
+    //   title: 'Flutter Demo\'s',
+    //   theme: ThemeData(
+    //     primarySwatch: Colors.blue,
+    //   ),
+    //   home: WelcomePage(title: 'Flutter Demo\'s'),
+    //   getPages: [
+    //     GetPage(name: "/getX", page: () => GetXDemo(), binding: InjectController()),
+    //   ],
+    //   debugShowCheckedModeBanner: false,
+    // );
   }
 }
 
@@ -264,6 +278,7 @@ class _WelcomePageState extends State<WelcomePage> {
                       context,
                       MaterialPageRoute(builder: (context) => GetXDemo()),
                     );
+                    //Get.toNamed('/getX');
                   },
                 ),
                 SizedBox(height: 10),

@@ -6,13 +6,14 @@ import 'package:get/get.dart';
 import 'package:get/instance_manager.dart';
 
 class GetXDemo extends StatelessWidget {
-  final ProductController productController = Get.put(ProductController());
+  final ProductController productController = Get.put(ProductController()); // If ProductController not yet injected
+  // final ProductController productController = Get.find<ProductController>(); // If ProductController already injected
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
+        title: Text("GetX Demo"),
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back_ios,
@@ -69,7 +70,7 @@ class GetXDemo extends StatelessWidget {
             }),
           )
         ],
-      ),
+      )
     );
   }
 }
