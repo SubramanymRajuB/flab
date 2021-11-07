@@ -21,3 +21,4 @@ Camera Demo: https://medium.com/geekculture/build-a-camera-app-flutter-in-app-ca
 HTTP Rest API demo: https://medium.com/flutter-community/working-with-apis-in-flutter-8745968103e9, https://medium.com/flutter-community/parsing-complex-json-in-flutter-747c46655f51, https://github.com/PoojaB26/ParsingJSON-Flutter, https://medium.com/swlh/flutter-get-data-from-a-rest-api-and-save-locally-in-a-sqlite-database-9a9de5867939
 SQLite Demo: https://medium.com/flutter-community/using-sqlite-in-flutter-187c1a82e8b, https://medium.com/swlh/flutter-get-data-from-a-rest-api-and-save-locally-in-a-sqlite-database-9a9de5867939
 DevTools Demo: https://github.com/filiph/sloth_app, https://www.youtube.com/watch?v=nq43mP7hjAE, https://www.youtube.com/watch?v=vVg9It7cOfY&t=1937s
+Integration Demo: https://www.youtube.com/watch?v=WPEsnJgW99M, https://github.com/md-weber/flutter_testing_tutorial/blob/integration-testing/integration_test/app_test.dart
