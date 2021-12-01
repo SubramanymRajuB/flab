@@ -1,4 +1,4 @@
-import 'package:flab/testing/counter.dart';
+import 'package:flab/testing/unit_testing/counter.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
