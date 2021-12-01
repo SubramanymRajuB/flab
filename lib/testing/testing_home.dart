@@ -79,14 +79,16 @@ class _TestingHomePageState extends State<TestingHomePage> {
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                         ),
                         SizedBox(height: 8),
-                        RaisedButton(
+                        ElevatedButton(
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => MoodScreen(),
-                              ),
-                            );
+                            if (_formKey.currentState.validate()) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => MoodScreen(),
+                                ),
+                              );
+                            }
                           },
                           child: Text("Login"),
                         )

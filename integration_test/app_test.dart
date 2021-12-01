@@ -13,17 +13,18 @@ void main() {
 
       var emailField = find.byType(TextFormField).first;
       var passwordField = find.byType(TextFormField).last;
-      var loginButton = find.byType(RaisedButton).first;
+      var loginButton = find.byType(ElevatedButton).first;
 
       // Enter text for the email address
       await tester.enterText(emailField, 'flutterexp@gmail.com');
-      await Future.delayed(Duration(seconds: 1));
+      await Future.delayed(Duration(seconds: 2));
 
       // Enter text for the password
       await tester.enterText(passwordField, '123456');
-      await Future.delayed(Duration(seconds: 1));
+      await Future.delayed(Duration(seconds: 2));
 
       await tester.tap(loginButton);
+      await Future.delayed(Duration(seconds: 2));
       await tester.pumpAndSettle();
 
       var firstCheckbox = find.byType(Checkbox).first;
@@ -41,7 +42,7 @@ void main() {
 
       await tester.tap(firstCheckbox);
       await tester.pumpAndSettle();
-      await Future.delayed(Duration(seconds: 1));
+      await Future.delayed(Duration(seconds: 2));
 
       expect(
         tester.getSemantics(firstCheckbox),

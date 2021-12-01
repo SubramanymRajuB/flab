@@ -153,7 +153,7 @@ class _DemoPage extends StatelessWidget {
               ),
 
               Image.asset(
-                'assets/pic_03.png',
+                'assets/pic_03.jpg',
                 width: 60,
                 height: 70,
                 fit: BoxFit.fill,
