@@ -9,7 +9,7 @@ class NewPage extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white70,),
           onPressed: (){
-            Navigator.of(context, rootNavigator: true).pop(context);
+            Navigator.of(context, rootNavigator: false).pop(context);
           },
           )
       ),

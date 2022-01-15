@@ -91,7 +91,7 @@ class _FirstPageState extends State<FirstPage> {
                 ElevatedButton(
                   child: Text('Navigate to new route'),
                   onPressed: () {
-                    Navigator.of(context).pushReplacement(
+                    Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) => NewPage(),
                       ),
