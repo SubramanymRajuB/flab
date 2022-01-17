@@ -3,22 +3,26 @@ import 'package:flutter/material.dart';
 import 'new_page.dart';
 
 class IntializeTitle extends StatefulWidget {
-    @override
+  @override
   _IntializeTitleState createState() => _IntializeTitleState();
 }
 
 class _IntializeTitleState extends State<IntializeTitle> {
   String title = 'First Page Old Title';
   VoidCallback onPressed;
-  void updateTitle(){
+  void updateTitle() {
     setState(() {
-      title='First Page New Title';
+      title = 'First Page New Title';
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FirstPage(title: title, onPressed: updateTitle,),
+      body: FirstPage(
+        title: title,
+        onPressed: updateTitle,
+      ),
     );
   }
 }
@@ -38,7 +42,6 @@ class FirstPage extends StatefulWidget {
 }
 
 class _FirstPageState extends State<FirstPage> {
-
 //Widget Life cycles
   @override
   void initState() {
@@ -51,18 +54,17 @@ class _FirstPageState extends State<FirstPage> {
     print("3: didChangeDependencies");
     super.didChangeDependencies();
   }
-  
-    int count = 0;
-    void _increment(){
-      setState(() {
-           print("6: setState");
-           count++;
-          });
-    }
-  
+
+  int count = 0;
+  void _increment() {
+    setState(() {
+      print("6: setState");
+      count++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    
     print("4: build");
 
     return Scaffold(
@@ -78,20 +80,26 @@ class _FirstPageState extends State<FirstPage> {
                 Text(
                   'counter value is: $count',
                 ),
-                SizedBox(height: 8.0,),
+                SizedBox(
+                  height: 8.0,
+                ),
                 Text(
                   'Orientation: $orientation',
                 ),
-                SizedBox(height: 8.0,),
+                SizedBox(
+                  height: 8.0,
+                ),
                 ElevatedButton(
                   child: Text('DidUpdateWidget'),
                   onPressed: widget.onPressed,
                 ),
-                SizedBox(height: 8.0,),
+                SizedBox(
+                  height: 8.0,
+                ),
                 ElevatedButton(
                   child: Text('Navigate to new route'),
                   onPressed: () {
-                    Navigator.of(context).pushReplacement(
+                    Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) => NewPage(),
                       ),
@@ -103,12 +111,11 @@ class _FirstPageState extends State<FirstPage> {
           );
         },
       ),
-      floatingActionButton:  FloatingActionButton(
-        child: Icon(Icons.plus_one),
-        onPressed: (){
-          _increment();
-        }
-      ),
+      floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.plus_one),
+          onPressed: () {
+            _increment();
+          }),
     );
   }
 
@@ -116,7 +123,7 @@ class _FirstPageState extends State<FirstPage> {
   void didUpdateWidget(covariant FirstPage oldWidget) {
     super.didUpdateWidget(oldWidget);
     print("5: didUpdateWidget");
-    if(this.widget.title!=oldWidget.title){
+    if (this.widget.title != oldWidget.title) {
       print("Title Changed");
     }
   }
@@ -132,6 +139,4 @@ class _FirstPageState extends State<FirstPage> {
     print("8: dispose");
     super.dispose();
   }
-
 }
-
