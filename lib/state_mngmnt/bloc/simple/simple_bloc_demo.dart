@@ -13,29 +13,24 @@ class SimpleBLocDemo extends StatelessWidget {
         title: Text("Simple Bloc Demo"),
         actions: [
           IconButton(
-          icon: Icon(Icons.more_horiz),
-          onPressed: (){
-            Navigator.push(
-              context, 
-              MaterialPageRoute(builder: (context)=>BlocDemo())
-            );
-          },
-        )],
-        ),
-        body: BlocProvider(
+            icon: Icon(Icons.more_horiz),
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => BlocDemo()));
+            },
+          )
+        ],
+      ),
+      body: BlocProvider(
           create: (BuildContext context) => CounterBloc(0),
-          child : CounterScreen()
-
-        ),
+          child: CounterScreen()),
     );
   }
 }
 
 class CounterScreen extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-
     final _counterBloc = BlocProvider.of<CounterBloc>(context);
 
     return Center(
@@ -43,25 +38,26 @@ class CounterScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           BlocBuilder<CounterBloc, int>(
-            builder: (BuildContext context, int state){
-              return Text("Counte Value : $state", style: TextStyle(fontSize: 30),);
+            builder: (BuildContext context, int state) {
+              return Text(
+                "Counte Value : $state",
+                style: TextStyle(fontSize: 30),
+              );
             },
           ),
-
           ButtonBar(
             alignment: MainAxisAlignment.center,
             children: <Widget>[
               ElevatedButton(
                 child: Text("increment"),
-                onPressed: (){
-                  _counterBloc.add(CounterEvents.increment);
+                onPressed: () {
+                  _counterBloc.add(Increment());
                 },
               ),
-
               ElevatedButton(
                 child: Text("decrement"),
-                onPressed: (){
-                  _counterBloc.add(CounterEvents.decrement);
+                onPressed: () {
+                  _counterBloc.add(Decrement());
                 },
               ),
             ],
