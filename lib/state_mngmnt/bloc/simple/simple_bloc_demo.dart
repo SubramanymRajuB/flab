@@ -1,3 +1,4 @@
+import 'package:flab/state_mngmnt/bloc/simple/simple_cubit_demo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -12,11 +13,30 @@ class SimpleBLocDemo extends StatelessWidget {
       appBar: AppBar(
         title: Text("Simple Bloc Demo"),
         actions: [
-          IconButton(
-            icon: Icon(Icons.more_horiz),
-            onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => BlocDemo()));
+          PopupMenuButton(
+            icon: Icon(
+              Icons.more_vert,
+              color: Colors.white,
+            ),
+            itemBuilder: (context) => const <PopupMenuItem<String>>[
+              PopupMenuItem<String>(
+                child: Text('Cubit Demo'),
+                value: 'cubit',
+              ),
+              PopupMenuItem<String>(
+                child: Text('Weather Demo'),
+                value: 'weather',
+              ),
+            ],
+            onSelected: (value) {
+              if (value == "cubit") {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SimpleCubitDemo()));
+              }
+              if (value == "weather") {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => BlocDemo()));
+              }
             },
           )
         ],
