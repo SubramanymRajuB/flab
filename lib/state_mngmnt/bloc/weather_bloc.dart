@@ -35,22 +35,35 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
   WeatherRepo weatherRepo;
 
   @override
-  WeatherBloc(this.weatherRepo) : super(WeatherIsNotSearched());
-
-  @override
-  Stream<WeatherState> mapEventToState(WeatherEvent event) async* {
-    if (event is FetchWeather) {
-      yield WeatherIsLoading();
-
+  WeatherBloc(this.weatherRepo) : super(WeatherIsNotSearched()) {
+    on<FetchWeather>((event, emit) async {
+      emit(WeatherIsLoading());
       try {
         WeatherModel weather = await weatherRepo.getWeather(event._city);
-        yield WeatherIsLoaded(weather);
+        emit(WeatherIsLoaded(weather));
       } catch (_) {
         print(_);
-        yield WeatherIsNotLoaded();
+        emit(WeatherIsNotLoaded());
       }
-    } else if (event is ResetWeather) {
-      yield WeatherIsNotSearched();
-    }
+    });
+    on<ResetWeather>((event, emit) => emit(WeatherIsNotSearched()));
   }
+
+//OLD WAY
+  // @override
+  // Stream<WeatherState> mapEventToState(WeatherEvent event) async* {
+  //   if (event is FetchWeather) {
+  //     yield WeatherIsLoading();
+
+  //     try {
+  //       WeatherModel weather = await weatherRepo.getWeather(event._city);
+  //       yield WeatherIsLoaded(weather);
+  //     } catch (_) {
+  //       print(_);
+  //       yield WeatherIsNotLoaded();
+  //     }
+  //   } else if (event is ResetWeather) {
+  //     yield WeatherIsNotSearched();
+  //   }
+  // }
 }

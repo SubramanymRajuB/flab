@@ -12,6 +12,7 @@ Navigation Demo: https://flutter.dev/docs/cookbook/navigation
 InheritedWidget, InheritedModel, ValueNotifier, ValueListenableBuilder: https://api.flutter.dev/flutter/widgets/InheritedWidget-class.html, https://www.youtube.com/watch?v=Dw6xGvzcF14, https://medium.com/flutterdevs/inherited-widget-in-flutter-604b0f009297, https://www.c-sharpcorner.com/article/how-to-implement-flutter-inherited-widget/
 ProviderDemo: https://www.youtube.com/watch?v=Md_zBZgVyJo, https://github.com/themaaz32/provider_todo
 BlocDemo: https://www.didierboelens.com/2018/08/reactive-programming-streams-bloc/, https://www.youtube.com/watch?v=yfn1w2Z-Ooo, https://github.com/themaaz32/WeatherAppWithBloc, https://www.youtube.com/watch?v=2zZkVLsySm4
+CubitDemo: https://blog.flutterando.com.br/cubit-a-simple-solution-for-app-state-management-in-flutter-66ab5279ef73
 MobxDemo: https://mobx.netlify.app/getting-started/, https://www.youtube.com/watch?v=CT6dXcfpk0E&t=51s, https://github.com/themaaz32/mobx_implementation
 GetXDemo: https://www.youtube.com/watch?v=apPH1CCOtKQ, https://github.com/afzalali15/shopx, https://www.youtube.com/watch?v=tNGfVp4KY2g, https://www.youtube.com/watch?v=V0oxG3tWiwk
 ReduxDemo: https://www.youtube.com/watch?v=vzCszJQ_qZQ, https://github.com/mahmudahsan/flutter/tree/master/flutter/states_redux
@@ -21,4 +22,6 @@ Camera Demo: https://medium.com/geekculture/build-a-camera-app-flutter-in-app-ca
 HTTP Rest API demo: https://medium.com/flutter-community/working-with-apis-in-flutter-8745968103e9, https://medium.com/flutter-community/parsing-complex-json-in-flutter-747c46655f51, https://github.com/PoojaB26/ParsingJSON-Flutter, https://medium.com/swlh/flutter-get-data-from-a-rest-api-and-save-locally-in-a-sqlite-database-9a9de5867939
 SQLite Demo: https://medium.com/flutter-community/using-sqlite-in-flutter-187c1a82e8b, https://medium.com/swlh/flutter-get-data-from-a-rest-api-and-save-locally-in-a-sqlite-database-9a9de5867939
 DevTools Demo: https://github.com/filiph/sloth_app, https://www.youtube.com/watch?v=nq43mP7hjAE, https://www.youtube.com/watch?v=vVg9It7cOfY&t=1937s
+Unit Testing demo: https://docs.flutter.dev/cookbook/testing/unit/introduction
+Widget Testing Demo: https://docs.flutter.dev/cookbook/testing/widget/introduction
 Integration Demo: https://www.youtube.com/watch?v=WPEsnJgW99M, https://github.com/md-weber/flutter_testing_tutorial/blob/integration-testing/integration_test/app_test.dart
