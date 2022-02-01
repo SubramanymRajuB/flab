@@ -26,6 +26,7 @@ class ProviderDemo extends StatelessWidget {
 class ProviderDemoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final provider =Provider.of<ChangeNotifierTodo>(context, listen: false);
     return Scaffold(
       backgroundColor: Colors.lightBlue[900],
       appBar: AppBar(
@@ -90,7 +91,7 @@ class ProviderDemoPage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: (){
-            Provider.of<ChangeNotifierTodo>(context, listen: false).addTaskInList();
+            provider.addTaskInList();
         },
       ),
 
