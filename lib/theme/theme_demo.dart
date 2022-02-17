@@ -82,8 +82,8 @@ class _ThemeState extends State<ThemesDemoPage> {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              Image.network(
-                  'https://api.timeforkids.com/wp-content/uploads/2019/09/final-cover-forest.jpg'),
+              // Image.network(
+              //     'https://api.timeforkids.com/wp-content/uploads/2019/09/final-cover-forest.jpg'),
               Padding(
                 padding: const EdgeInsets.only(top: 16.0),
                 child: Text(
