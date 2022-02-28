@@ -31,22 +31,43 @@ class WeatherIsLoaded extends WeatherState {
 
 class WeatherIsNotLoaded extends WeatherState {}
 
-class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
+// class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
+//   WeatherRepo weatherRepo;
+
+//   @override
+//   WeatherBloc(this.weatherRepo) : super(WeatherIsNotSearched()) {
+//     on<FetchWeather>((event, emit) async {
+//       emit(WeatherIsLoading());
+//       try {
+//         WeatherModel weather = await weatherRepo.getWeather(event._city);
+//         emit(WeatherIsLoaded(weather));
+//       } catch (_) {
+//         print(_);
+//         emit(WeatherIsNotLoaded());
+//       }
+//     });
+//     on<ResetWeather>((event, emit) => emit(WeatherIsNotSearched()));
+//   }
+
+class WeatherCubit extends Cubit<WeatherState> {
   WeatherRepo weatherRepo;
 
   @override
-  WeatherBloc(this.weatherRepo) : super(WeatherIsNotSearched()) {
-    on<FetchWeather>((event, emit) async {
+  WeatherCubit(this.weatherRepo) : super(WeatherIsNotSearched());
+
+  void FetchWeather(String city) async {
       emit(WeatherIsLoading());
       try {
-        WeatherModel weather = await weatherRepo.getWeather(event._city);
+        WeatherModel weather = await weatherRepo.getWeather(city);
         emit(WeatherIsLoaded(weather));
       } catch (_) {
         print(_);
         emit(WeatherIsNotLoaded());
       }
-    });
-    on<ResetWeather>((event, emit) => emit(WeatherIsNotSearched()));
+  }
+
+  void ResetWeather() async {
+       emit(WeatherIsNotSearched());
   }
 
 //OLD WAY
