@@ -9,7 +9,7 @@ import "package:flutter/material.dart";
 Widget countStar(double rating, {color = Colors.deepOrange}) {
   int num = rating ~/ 2; //the entire star
   bool isHalf = (rating - num * 2) > 1.0; // half star
-  List<Widget> stars = List();
+  List<Widget> stars = [];
   var line = SizedBox(
     width: 0.0,
   );

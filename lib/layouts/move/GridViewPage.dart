@@ -108,14 +108,13 @@ class _GridState extends State<GridViewPage> {
   @override
   Widget build(BuildContext context) {
     var items = getItemList();
-    var l = List<Widget>();
+    var l = <Widget>[];
     for (var item in items) {
       l.add(_grdItem(item));
     }
     return Scaffold(
       appBar: MainAppBar(
         titleText: GRID_VIEW_NAME,
-
       ),
       body: Container(
         child: GridView.count(

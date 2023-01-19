@@ -1,9 +1,8 @@
 import 'package:flab/constants/main_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter/foundation.dart';
 
-  final List<String> IMAGES = [
+final List<String> images = [
   "pic_01",
   "pic_02",
   "pic_04",
@@ -12,14 +11,14 @@ import 'package:flutter/foundation.dart';
   "pic_07",
   "pic_08",
   "pic_09"
-  ];
+];
 
-  Image _getAssetImage(name) {
-    return Image.asset(
-      "assets/$name.jpg",
-      fit: BoxFit.cover,
-    );
-  }
+Image _getAssetImage(name) {
+  return Image.asset(
+    "assets/$name.jpg",
+    fit: BoxFit.cover,
+  );
+}
 
 class HeroHeader implements SliverPersistentHeaderDelegate {
   HeroHeader({
@@ -59,9 +58,8 @@ class HeroHeader implements SliverPersistentHeaderDelegate {
           top: 4.0,
           child: SafeArea(
             child: IconButton(
-              icon: Icon(group == GroupType.simple
-                  ? Icons.filter_1
-                  : Icons.filter_2),
+              icon: Icon(
+                  group == GroupType.simple ? Icons.filter_1 : Icons.filter_2),
               onPressed: onClick,
             ),
           ),
@@ -134,14 +132,14 @@ class HeroScreen extends StatelessWidget implements HasLayoutGroup {
             ),
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
-                var name = IMAGES[index % 8];
+                var name = images[index % 8];
                 return Container(
                   alignment: Alignment.center,
                   padding: _edgeInsetsForIndex(index),
                   child: _getAssetImage(name),
                 );
               },
-              childCount: IMAGES.length*2,
+              childCount: images.length * 2,
             ),
           ),
         ],

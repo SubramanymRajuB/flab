@@ -11,41 +11,42 @@ const kAppTitle = 'State by Redux';
 Store<AppState> _store;
 
 class ReduxDemo extends StatelessWidget {
-  ReduxDemo(Store<AppState> store){
-      if(store!=null){
-        _store=store;
-      }
+  ReduxDemo(Store<AppState> store) {
+    if (store != null) {
+      _store = store;
+    }
   }
   @override
   Widget build(BuildContext context) {
     return StoreProvider<AppState>(
       store: _store,
-      child: MaterialApp(
-        home: ReduxDemoPage(),routes: {
-          '/redux_demo': (context) => ReduxDemo(null),
-          '/settings': (context) => Settings(),
-        }
-      ),
+      child: MaterialApp(home: ReduxDemoPage(), routes: {
+        '/redux_demo': (context) => ReduxDemo(null),
+        '/settings': (context) => Settings(),
+      }),
     );
   }
 }
 
 class ReduxDemoPage extends StatelessWidget {
-  String text = lorem(paragraphs: 3, words: 50);
+  final String text = lorem(paragraphs: 3, words: 50);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(kAppTitle),
-        backgroundColor: Colors.teal,
-          actions : [IconButton(
-          icon: Icon(Icons.cancel, color: Colors.white70,),
-          onPressed: (){
-            Navigator.of(context, rootNavigator: true).pop(context);
-          }
-        )]
-      ),
+          title: Text(kAppTitle),
+          backgroundColor: Colors.teal,
+          actions: [
+            IconButton(
+                icon: Icon(
+                  Icons.cancel,
+                  color: Colors.white70,
+                ),
+                onPressed: () {
+                  Navigator.of(context, rootNavigator: true).pop(context);
+                })
+          ]),
       drawer: DrawerMenu(),
       body: Container(
         margin: EdgeInsets.all(10),

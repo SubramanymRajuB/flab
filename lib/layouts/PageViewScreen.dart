@@ -58,7 +58,7 @@ class _PageViewState extends State<PageViewScreen> {
   }
 
   Widget _bodyContent() {
-    var list = List<Widget>();
+    var list = [];
     for (int i = 0; i < PAGE_CONTENTS.length; i++) {
       list.add(_childView(i));
     }

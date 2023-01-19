@@ -7,9 +7,9 @@ import 'weather_repo.dart';
 class WeatherEvent {}
 
 class FetchWeather extends WeatherEvent {
-  final _city;
+  final city;
 
-  FetchWeather(this._city);
+  FetchWeather(this.city);
 }
 
 class ResetWeather extends WeatherEvent {}
@@ -55,19 +55,19 @@ class WeatherCubit extends Cubit<WeatherState> {
   @override
   WeatherCubit(this.weatherRepo) : super(WeatherIsNotSearched());
 
-  void FetchWeather(String city) async {
-      emit(WeatherIsLoading());
-      try {
-        WeatherModel weather = await weatherRepo.getWeather(city);
-        emit(WeatherIsLoaded(weather));
-      } catch (_) {
-        print(_);
-        emit(WeatherIsNotLoaded());
-      }
+  void fetchWeather(String city) async {
+    emit(WeatherIsLoading());
+    try {
+      WeatherModel weather = await weatherRepo.getWeather(city);
+      emit(WeatherIsLoaded(weather));
+    } catch (_) {
+      print(_);
+      emit(WeatherIsNotLoaded());
+    }
   }
 
-  void ResetWeather() async {
-       emit(WeatherIsNotSearched());
+  void resetWeather() async {
+    emit(WeatherIsNotSearched());
   }
 
 //OLD WAY

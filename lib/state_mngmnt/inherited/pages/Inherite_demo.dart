@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'inherited_model_page.dart';
@@ -10,7 +9,8 @@ class InheritedDemo extends StatefulWidget {
   _InheritedDemoState createState() => _InheritedDemoState();
 }
 
-class _InheritedDemoState extends State<InheritedDemo> with SingleTickerProviderStateMixin {
+class _InheritedDemoState extends State<InheritedDemo>
+    with SingleTickerProviderStateMixin {
   int _currentIndex = 0;
   List _listPages = [];
   Widget _currentPage;
@@ -52,12 +52,12 @@ class _InheritedDemoState extends State<InheritedDemo> with SingleTickerProvider
             label: 'InheritedWidget',
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.lightbulb_outline),
-              label: 'InheritedModel',
+            icon: Icon(Icons.lightbulb_outline),
+            label: 'InheritedModel',
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.hearing),
-              label: 'ValueNotifier',
+            icon: Icon(Icons.hearing),
+            label: 'ValueNotifier',
           ),
         ],
         onTap: _changePage,
@@ -66,4 +66,3 @@ class _InheritedDemoState extends State<InheritedDemo> with SingleTickerProvider
     );
   }
 }
-

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 void main() {
   runApp(Demo());
@@ -93,7 +92,8 @@ class _DemoPage extends StatelessWidget {
               Expanded(
                 child: Stack(
                     alignment: AlignmentDirectional.topStart,
-                    fit: StackFit.loose, //expand value stack should wrapped inside expanded widget
+                    fit: StackFit
+                        .loose, //expand value stack should wrapped inside expanded widget
                     children: <Widget>[
                       // Max Size Widget
                       Container(

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc_demo.dart';
-import 'counter_bloc.dart';
 import 'counter_cubit.dart';
 
 class SimpleCubitDemo extends StatelessWidget {
@@ -32,7 +31,7 @@ class SimpleCubitDemo extends StatelessWidget {
 class CounterCubitScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final _counterBloc = BlocProvider.of<CounterCubit>(context);
+    //final _counterBloc = BlocProvider.of<CounterCubit>(context);
 
     return Center(
       child: Column(

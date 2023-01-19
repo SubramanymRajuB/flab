@@ -131,7 +131,7 @@ class SearchPage extends StatelessWidget {
                         height: 50,
                         child: ElevatedButton(
                           onPressed: () {
-                            weatherBloc.FetchWeather(cityController.text);
+                            weatherBloc.fetchWeather(cityController.text);
                             //weatherBloc.add(FetchWeather(cityController.text));
                           },
                           child: Text(
@@ -226,7 +226,7 @@ class SearchPage extends StatelessWidget {
 }
 
 class ShowWeather extends StatelessWidget {
-  WeatherModel weather;
+  final WeatherModel weather;
   final city;
 
   ShowWeather(this.weather, this.city);
@@ -292,7 +292,7 @@ class ShowWeather extends StatelessWidget {
               height: 50,
               child: ElevatedButton(
                 onPressed: () {
-                  BlocProvider.of<WeatherCubit>(context).ResetWeather();
+                  BlocProvider.of<WeatherCubit>(context).resetWeather();
                   //BlocProvider.of<WeatherBloc>(context).add(ResetWeather());
                 },
                 child: Text(

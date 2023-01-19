@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
 
-
 class SimplePlatformMsg extends StatefulWidget {
   SimplePlatformMsg({Key key, this.title}) : super(key: key);
   final String title;
   @override
   _SimplePlatformMsgState createState() => new _SimplePlatformMsgState();
 }
+
 class _SimplePlatformMsgState extends State<SimplePlatformMsg> {
   static const msgChannel = const MethodChannel('flutter.native/simple_msg');
   static const launchChannel = const MethodChannel('flutter.native/launchURL');
@@ -18,7 +18,8 @@ class _SimplePlatformMsgState extends State<SimplePlatformMsg> {
   Future<void> _getNativeMsg() async {
     String response = "";
     try {
-      final String result = await msgChannel.invokeMethod('simpleMsgFromNative');
+      final String result =
+          await msgChannel.invokeMethod('simpleMsgFromNative');
       response = result;
     } on PlatformException catch (e) {
       response = "Failed to Invoke: '${e.message}'.";
@@ -30,9 +31,9 @@ class _SimplePlatformMsgState extends State<SimplePlatformMsg> {
 
   Future<void> _launchURL() async {
     try {
-       await launchChannel.invokeMethod('launchBrowser');
-    } on PlatformException catch (e) {
-      var response = "Failed to Invoke: '${e.message}'.";
+      await launchChannel.invokeMethod('launchBrowser');
+    } on PlatformException catch (_) {
+      //var response = "Failed to Invoke: '${e.message}'.";
     }
   }
 
@@ -58,16 +59,22 @@ class _SimplePlatformMsgState extends State<SimplePlatformMsg> {
     return Material(
       child: Scaffold(
         appBar: AppBar(
-        backgroundColor: Colors.lightBlue[900],
-        elevation: 0,
-        title: Text("Native API Acess Demo", style: TextStyle(color: Colors.white),),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white70,),
-          onPressed: (){
-            Navigator.of(context, rootNavigator: true).pop(context);
-          },
+          backgroundColor: Colors.lightBlue[900],
+          elevation: 0,
+          title: Text(
+            "Native API Acess Demo",
+            style: TextStyle(color: Colors.white),
           ),
-      ),
+          leading: IconButton(
+            icon: Icon(
+              Icons.arrow_back,
+              color: Colors.white70,
+            ),
+            onPressed: () {
+              Navigator.of(context, rootNavigator: true).pop(context);
+            },
+          ),
+        ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
