@@ -59,12 +59,7 @@ class LayoutDemoPage extends State<LayoutDemo> {
         BOTTOM_ICONS[type.index],
         color: _itemColor(type),
       ),
-      title: Text(
-        BOTTOM_TITLES[type.index],
-        style: TextStyle(
-          color: _itemColor(type),
-        ),
-      ),
+      label: BOTTOM_TITLES[type.index],
     );
   }
 
